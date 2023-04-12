@@ -293,12 +293,12 @@ static int io_state_init_wlan(struct io_state *state, const char *wlan, const st
 		log_error("Could not set link down: %", state->wlan_ifname);
 		return err;
 	}
-	if (!state->wlan_no_monitor_mode) /* if device is already in monitor mode */
+	/*if (!state->wlan_no_monitor_mode) //if device is already in monitor mode
 		err = set_monitor_mode(state->wlan_ifindex);
 	if (err < 0) {
 		log_error("Could not put device in monitor mode: %s", state->wlan_ifname);
 		return err;
-	}
+	}*/
 	err = link_up(state->wlan_ifindex);
 	if (err < 0) {
 		log_error("Could set link up: %", state->wlan_ifname);
